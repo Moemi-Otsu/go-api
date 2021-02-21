@@ -26,3 +26,17 @@ var _ = Resource("todolist", func() {
     Response(NotFound)
   })
 })
+
+var TodoListMedia = MediaType("application/vnd.goa.example.todolist+json", func() {
+  Description("A todo of todolist")
+  Attributes(func() {
+    Attributes("id", Integer, "Unique todo ID")
+    Attributes("href", String, "Name of todo")
+    Required("id", "href", "name")
+  })
+  View("default", func() {
+    Attribute("id")
+    Attribute("href")
+    Attribute("name")
+  })
+})
