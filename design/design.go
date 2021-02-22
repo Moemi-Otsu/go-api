@@ -27,6 +27,7 @@ var _ = Resource("todolist", func() {
   })
 })
 
+// TodoListMedia defines the media type used to render todolist.
 var TodoListMedia = MediaType("application/vnd.goa.example.todolist+json", func() {
   Description("A todo of todolist")
   Attributes(func() {
